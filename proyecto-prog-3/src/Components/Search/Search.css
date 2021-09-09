@@ -1,8 +1,6 @@
 .searcher{
-    
     background-image: url(marvel-1100x514.jpg);
     background-repeat: no-repeat;
-    
     padding-left: 44%;
     padding-bottom: 200px;
     padding-top: 100px;
@@ -11,6 +9,8 @@
 .buscador{
     border-radius: 5px;
     padding: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
     margin: 10px;
     background-color: rgba(26, 13, 15, 0.9);
     font-style: oblique;

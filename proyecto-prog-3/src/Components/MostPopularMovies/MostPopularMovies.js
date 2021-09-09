@@ -2,122 +2,68 @@ import React, {Component} from 'react';
 import './MostPopularMovies.css'
 
 class MostPopularMovies extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            verMas: false,
+            text: 'Ver mas',
+            selected: false,
+        }
+    }
+    verMas(){
+        if(this.state.verMas){
+            this.setState({
+                verMas: false,
+                text: 'Ver más'
+            })
+        } else {
+            this.setState({
+                verMas: true,
+                text: 'Ver menos'
+            })            
+        }
+    }
+
+    selected(){
+        if(this.state.selected){
+            this.setState({
+                selected: false,
+            })
+        } else {
+            this.setState({
+                selected: true,
+            })
+        }
+    }
     render(){
+        if(this.props.dataPopularMovies == undefined) return (null)
         return(
             <React.Fragment>
+            
+                <div className={`character-card ${this.state.selected ? 'active' : ''}`} onDoubleClick={ ()=>this.selected()}>
                         <div className='pelisPopu'>
                         <section class="card-container">
-            <article className='character-card'>
-                <section class="navigation">
-                    <div>
-                        <i class="fas fa-chevron-left"></i>
-                        <i class="fas fa-chevron-right"></i>
+                            <section class="navigation">
+                                <div>
+                                    <i class="fas fa-chevron-left"></i>
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                                <i class="far fa-window-close"></i>
+                            </section>
+                            <article>
+                                <main>
+                                    <h3>{this.props.dataPopularMovies.title}</h3>
+                                    <h4>{this.props.dataPopularMovies.release_date}</h4>
+                                    <p className={`extra ${this.state.verMas ? 'show' : 'hide'}`}>{this.props.dataPopularMovies.overview}</p>
+                                    <p className='more' onClick={()=>this.verMas()}>{this.state.text}</p>
+                                    <button onClick = { () => this.props.ocultar(this.props.dataPopularMovies.id)}>Quitar</button>
+                                </main>
+                            </article>
+            
+                        </section>
                     </div>
-                    <i class="far fa-window-close"></i>
-                </section>
-                <main>
-                    <img src="./img/image-default.png" alt=""/>
-                    <h3>Título/ Nombre</h3>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint, laboriosam cum.</p>
-                    <section class="aditional-info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                    </section>
-                    <a href="">Ver más</a>
-                </main>
-            </article>
-            <article className='character-card'>
-                <section class="navigation">
-                    <div>
-                        <i class="fas fa-chevron-left"></i>
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <i class="far fa-window-close"></i>
-                </section>
-                <main>
-                    <img src="./img/image-default.png" alt=""/>
-                    <h3>Título/ Nombre</h3>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere
-                        laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta
-                        perspiciatis! Sint, laboriosam cum.</p>
-                    <section class="aditional-info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                    </section>
-                    <a href="">Ver más</a>
-                </main>
-            </article>
-            <article className='character-card'>
-                <section class="navigation">
-                    <div>
-                        <i class="fas fa-chevron-left"></i>
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <i class="far fa-window-close"></i>
-                </section>
-                <main>
-                    <img src="./img/image-default.png" alt=""/>
-                    <h3>Título/ Nombre</h3>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere
-                        laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta
-                        perspiciatis! Sint, laboriosam cum.</p>
-                    <section class="aditional-info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                    </section>
-                    <a href="">Ver más</a>
-                </main>
-            </article>
-            <article className='character-card'>
-                <section class="navigation">
-                    <div>
-                        <i class="fas fa-chevron-left"></i>
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <i class="far fa-window-close"></i>
-                </section>
-                <main>
-                    <img src="./img/image-default.png" alt=""/>
-                    <h3>Título/ Nombre</h3>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere
-                        laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta
-                        perspiciatis! Sint, laboriosam cum.</p>
-                    <section class="aditional-info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                    </section>
-                    <a href="">Ver más</a>
-                </main>
-            </article>
-            <article className='character-card'>
-                <section class="navigation">
-                    <div>
-                        <i class="fas fa-chevron-left"></i>
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <i class="far fa-window-close"></i>
-                </section>
-                <main>
-                    <img src="./img/image-default.png" alt=""/>
-                    <h3>Título/ Nombre</h3>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere
-                        laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta
-                        perspiciatis! Sint, laboriosam cum.</p>
-                    <section class="aditional-info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                    </section>
-                    <a href="">Ver más</a>
-                </main>
-            </article>
-            <button type="button" class="btn btn-default">Mas peliculas</button>
-        </section>
-                        </div>
+                </div>
+            
             </React.Fragment>
         )
     }

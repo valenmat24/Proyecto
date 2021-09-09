@@ -10,7 +10,6 @@ function App() {
   return (
     <React.Fragment>
       <Header />,
-      <Search />,
       <MostPopularMovies/>,
       <MostApi/>
     </React.Fragment>
