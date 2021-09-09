@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Custom global css -->
-    <link rel="stylesheet" href=""> 
-    <title>Maqueta del proyecto React</title>
-</head>
-<body>
-    
-    <main>
-        <button type="button">Cargar más tarjetas</button>
-        <section class="card-container">
-            <article>
+import React, {Component} from 'react';
+import './MostPopularMovies.css'
+
+class MostPopularMovies extends Component{
+    render(){
+        return(
+            <React.Fragment>
+                        <div className='pelisPopu'>
+                        <section class="card-container">
+            <article className='character-card'>
                 <section class="navigation">
                     <div>
                         <i class="fas fa-chevron-left"></i>
@@ -24,7 +16,7 @@
                     <i class="far fa-window-close"></i>
                 </section>
                 <main>
-                    <img src="./img/image-default.png" alt="">
+                    <img src="./img/image-default.png" alt=""/>
                     <h3>Título/ Nombre</h3>
                     <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint, laboriosam cum.</p>
                     <section class="aditional-info">
@@ -35,7 +27,7 @@
                     <a href="">Ver más</a>
                 </main>
             </article>
-            <article>
+            <article className='character-card'>
                 <section class="navigation">
                     <div>
                         <i class="fas fa-chevron-left"></i>
@@ -44,7 +36,7 @@
                     <i class="far fa-window-close"></i>
                 </section>
                 <main>
-                    <img src="./img/image-default.png" alt="">
+                    <img src="./img/image-default.png" alt=""/>
                     <h3>Título/ Nombre</h3>
                     <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere
                         laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta
@@ -57,7 +49,7 @@
                     <a href="">Ver más</a>
                 </main>
             </article>
-            <article>
+            <article className='character-card'>
                 <section class="navigation">
                     <div>
                         <i class="fas fa-chevron-left"></i>
@@ -66,7 +58,7 @@
                     <i class="far fa-window-close"></i>
                 </section>
                 <main>
-                    <img src="./img/image-default.png" alt="">
+                    <img src="./img/image-default.png" alt=""/>
                     <h3>Título/ Nombre</h3>
                     <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere
                         laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta
@@ -79,7 +71,7 @@
                     <a href="">Ver más</a>
                 </main>
             </article>
-            <article>
+            <article className='character-card'>
                 <section class="navigation">
                     <div>
                         <i class="fas fa-chevron-left"></i>
@@ -88,7 +80,7 @@
                     <i class="far fa-window-close"></i>
                 </section>
                 <main>
-                    <img src="./img/image-default.png" alt="">
+                    <img src="./img/image-default.png" alt=""/>
                     <h3>Título/ Nombre</h3>
                     <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere
                         laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta
@@ -101,7 +93,7 @@
                     <a href="">Ver más</a>
                 </main>
             </article>
-            <article>
+            <article className='character-card'>
                 <section class="navigation">
                     <div>
                         <i class="fas fa-chevron-left"></i>
@@ -110,7 +102,7 @@
                     <i class="far fa-window-close"></i>
                 </section>
                 <main>
-                    <img src="./img/image-default.png" alt="">
+                    <img src="./img/image-default.png" alt=""/>
                     <h3>Título/ Nombre</h3>
                     <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere
                         laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta
@@ -123,58 +115,13 @@
                     <a href="">Ver más</a>
                 </main>
             </article>
-            <article>
-                <section class="navigation">
-                    <div>
-                        <i class="fas fa-chevron-left"></i>
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <i class="far fa-window-close"></i>
-                </section>
-                <main>
-                    <img src="./img/image-default.png" alt="">
-                    <h3>Título/ Nombre</h3>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere
-                        laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta
-                        perspiciatis! Sint, laboriosam cum.</p>
-                    <section class="aditional-info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                    </section>
-                    <a href="">Ver más</a>
-                </main>
-            </article>
-            <article>
-                <section class="navigation">
-                    <div>
-                        <i class="fas fa-chevron-left"></i>
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <i class="far fa-window-close"></i>
-                </section>
-                <main>
-                    <img src="./img/image-default.png" alt="">
-                    <h3>Título/ Nombre</h3>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere
-                        laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta
-                        perspiciatis! Sint, laboriosam cum.</p>
-                    <section class="aditional-info">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
-                    </section>
-                    <a href="">Ver más</a>
-                </main>
-            </article>
+            <button type="button" class="btn btn-default">Mas peliculas</button>
         </section>
-    </main>
-    <footer>
-        <ul class="team">
-            <li>Nombre integrante 1</li>
-            <li>Nombre integrante 2</li>
-            <li>Nombre integrante 3</li>
-        </ul>
-    </footer>
-</body>
-</html>
+                        </div>
+            </React.Fragment>
+        )
+    }
+    
+}
+
+export default MostPopularMovies;
