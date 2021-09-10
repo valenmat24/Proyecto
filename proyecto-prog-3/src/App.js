@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header/header';
-import Search from './Components/Search/Search';
 import MostPopularMovies from './Components/MostPopularMovies/MostPopularMovies';
 import MostApi from './Components/MostPopularMovies/MostApi';
+import Footer from './Components/Footer/Footer';
 import React from 'react';
 
 function App() {
@@ -12,6 +11,7 @@ function App() {
       <Header />,
       <MostPopularMovies/>,
       <MostApi/>
+      <Footer/>
     </React.Fragment>
   );
 }

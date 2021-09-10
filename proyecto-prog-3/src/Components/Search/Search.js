@@ -23,7 +23,7 @@ nuevoValorIngresadoPorElUsuario(evento){
     render(){
         return(
             <React.Fragment>
-                            <form  onSubmit={(e)=>this.avoidSending(e)} className='searcher'>
+                        <form  onSubmit={(e)=>this.avoidSending(e)} className='searcher'>
                             <input placeholder="Search Movies/Series" className='buscador' type='text' name='nombre' id='nombre' onChange={(e)=>this.nuevoValorIngresadoPorElUsuario(e)} value={this.state.filtrarPor}/>
                             <button type="submit"><i class="fas fa-search"></i></button>
                         </form>

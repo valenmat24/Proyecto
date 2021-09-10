@@ -1,0 +1,14 @@
+ul{
+    display: flex;
+    background-color: rgb(180, 17, 71);
+    padding-bottom: 40px;
+}
+li{
+    font-size: 20px;
+    padding-top: 50px;
+    padding-left: 300px;
+    list-style: none;
+    color: black;
+    justify-content: space-between;
+    font-style: italic;
+}

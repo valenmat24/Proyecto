@@ -66,6 +66,7 @@ class MostApi extends Component{
             <React.Fragment>
                 
                     <Search filtrarPeliculas = {(texto)=> this.filtrarPeliculas(texto)}/>
+                    <h2 className='titulos'> Most Popular Movies </h2>
                     {this.state.peliculasPopulares.map((peliculas, id)=><MostPopularMovies key={peliculas.title + id} dataPopularMovies={peliculas} ocultar = {(idEliminar)=>this.ocultar(idEliminar)}/>)}
                     <button onClick= {() => this.masPeliculasPopulares() } >Mas peliculas</button>
                     
