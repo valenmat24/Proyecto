@@ -18,7 +18,7 @@ class MostApi extends Component{
             .then((data)=>{
                 console.log(data);
                 this.setState({
-                    peliculasPopulares: data.results,
+                    peliculasPopulares: data.results.splice(10-20),
                 })
             })
             .catch(function(e){
@@ -43,7 +43,7 @@ class MostApi extends Component{
             })
             .then((data) =>{
                 this.setState({
-                    peliculasPopulares : this.state.peliculasPopulares.concat(data.results),
+                    peliculasPopulares : this.state.peliculasPopulares.concat(data.results.splice(10-20)),
                     nextUrl : 'https://api.themoviedb.org/3/movie/popular?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=2' 
                 })
             })
