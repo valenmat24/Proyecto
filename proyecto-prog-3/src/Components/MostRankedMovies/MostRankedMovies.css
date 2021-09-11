@@ -32,5 +32,21 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 
 .titulos{
     color:black;
-    margin-left: 44%;
+    margin-left: 43%;
+}
+.peliss{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(180, 17, 71);
+}
+.masPeliculas{
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-left: 42.5%;
+}
+.fondo{
+    background-color: rgb(180, 17, 71);
+    padding-top: 30px;
 }

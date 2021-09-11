@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import './NowPlayingMovies.css'
 
-class MoviesComingSoon extends Component{
+class NowPlayingMovies extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -9,8 +10,6 @@ class MoviesComingSoon extends Component{
             selected: false,
         }
     }
-
-    //Para ver mas y ver menos////////////
     verMas(){
         if(this.state.verMas){
             this.setState({
@@ -24,6 +23,7 @@ class MoviesComingSoon extends Component{
             })            
         }
     }
+
     selected(){
         if(this.state.selected){
             this.setState({
@@ -34,13 +34,13 @@ class MoviesComingSoon extends Component{
                 selected: true,
             })
         }
-}
-//Para ver mas y ver menos////////////
+    }
     render(){
-        if(this.props.dataComingMovies == undefined) return (null)
+        if(this.props.dataPlayingMovies == undefined) return (null)
         return(
             <React.Fragment>
-                    <div className={`character-card ${this.state.selected ? 'active' : ''}`} onDoubleClick={ ()=>this.selected()}>
+            
+                <div className={`character-card ${this.state.selected ? 'active' : ''}`} onDoubleClick={ ()=>this.selected()}>
                         <div className='pelisPopu'>
                         <section class="card-container">
                             <section class="navigation">
@@ -52,20 +52,22 @@ class MoviesComingSoon extends Component{
                             </section>
                             <article>
                                 <main>
-                                <img alt='20' src={`https://image.tmdb.org/t/p/w500/${this.props.dataComingMovies.backdrop_path}`} />
-                                    <h3>{this.props.dataComingMovies.title}</h3>
-                                    <p className={`extra ${this.state.verMas ? 'show' : 'hide'}`}>{this.props.dataComingMovies.release_date} / Rated: {this.props.dataComingMovies.vote_average} / Overview: {this.props.dataComingMovies.overview} </p>
+                                    <img alt='20' src={`https://image.tmdb.org/t/p/w500/${this.props.dataPlayingMovies.backdrop_path}`} />
+                                    <h3>{this.props.dataPlayingMovies.title}</h3>
+                                    <p className={`extra ${this.state.verMas ? 'show' : 'hide   '}`}>{this.props.dataPlayingMovies.release_date} / Rated: {this.props.dataPlayingMovies.vote_average} / Overview: {this.props.dataPlayingMovies.overview}</p>
                                     <p className='more' onClick={()=>this.verMas()}>{this.state.text}</p>
-                                    <button onClick = { () => this.props.ocultar(this.props.dataComingMovies.id)}>Quitar</button>
+                                    <button onClick = { () => this.props.ocultar(this.props.dataPlayingMovies.id)}>Quitar</button>
                                 </main>
                             </article>
             
                         </section>
                     </div>
-                </div>  
+                </div>
+            
             </React.Fragment>
         )
     }
+    
 }
 
-export default MoviesComingSoon;
+export default NowPlayingMovies;

@@ -18,7 +18,7 @@ class MostApi extends Component{
             .then((data)=>{
                 console.log(data);
                 this.setState({
-                    peliculasPopulares: data.results.splice(10-20),
+                    peliculasPopulares: data.results.splice(11-20),
                 })
             })
             .catch(function(e){
@@ -43,7 +43,7 @@ class MostApi extends Component{
             })
             .then((data) =>{
                 this.setState({
-                    peliculasPopulares : this.state.peliculasPopulares.concat(data.results.splice(10-20)),
+                    peliculasPopulares : this.state.peliculasPopulares.concat(data.results.splice(11-20)),
                     nextUrl : 'https://api.themoviedb.org/3/movie/popular?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=2' 
                 })
             })
@@ -64,12 +64,14 @@ class MostApi extends Component{
     render(){
         return(
             <React.Fragment>
-                
+                    <div className='fondo'>
                     <Search filtrarPeliculas = {(texto)=> this.filtrarPeliculas(texto)}/>
                     <h2 className='titulos'> Most Popular Movies </h2>
+                    <div className='peliss'>
                     {this.state.peliculasPopulares.map((peliculas, id)=><MostPopularMovies key={peliculas.title + id} dataPopularMovies={peliculas} ocultar = {(idEliminar)=>this.ocultar(idEliminar)}/>)}
-                    <button onClick= {() => this.masPeliculasPopulares() } >Mas peliculas</button>
-                    
+                    </div>
+                    <button className='masPeliculas' onClick= {() => this.masPeliculasPopulares() } >Mas peliculas</button>
+                    </div>
             </React.Fragment>
             )
         }

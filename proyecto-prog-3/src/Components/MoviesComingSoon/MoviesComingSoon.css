@@ -1,0 +1,12 @@
+.peliss{
+    display: flex;
+    background-color: white;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.masPeliculas{
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-left: 42.5%;
+}

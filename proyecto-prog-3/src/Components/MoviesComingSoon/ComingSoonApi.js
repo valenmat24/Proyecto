@@ -17,7 +17,7 @@ class ComingMoviesApi extends Component{
             .then((data)=>{
                 console.log(data);
                 this.setState({
-                    comingMovies: data.results.splice(10-20),
+                    comingMovies: data.results.splice(11-20),
                 })
             })
             .catch(function(e){
@@ -42,7 +42,7 @@ class ComingMoviesApi extends Component{
         })
         .then((data) =>{
             this.setState({
-                comingMovies : this.state.comingMovies.concat(data.results.splice(10-20)),
+                comingMovies : this.state.comingMovies.concat(data.results.splice(11-20)),
                 nextUrl : 'https://api.themoviedb.org/3/movie/upcoming?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=2' 
             })
         })
@@ -52,9 +52,13 @@ class ComingMoviesApi extends Component{
     render(){
         return(
             <React.Fragment>
-                <h2 className='titulos'> Coming Movies </h2>
+                <div className='fondo'>
+                <h2 className='titulos'> Coming Soon Movies </h2>
+                <div className='peliss'>
                 {this.state.comingMovies.map((peliculas, id)=><MoviesComingSoon key={peliculas.title + id} dataComingMovies={peliculas} ocultar = {(idEliminar)=>this.ocultar(idEliminar)}/>)}
-                <button onClick= {() => this.masPeliculasComing() } >Mas peliculas</button>
+                </div>
+                <button className='masPeliculas' onClick= {() => this.masPeliculasComing() } >Mas peliculas</button>
+                </div>
             </React.Fragment>
 
         )
