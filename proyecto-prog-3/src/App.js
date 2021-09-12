@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 //Header//
 import Header from './Components/Header/header';
@@ -15,12 +16,18 @@ import NowPlayingMovies from './Components/NowPlayingMovies/NowPlayingMovies';
 import NowPlayingMoviesApi from './Components/NowPlayingMovies/NowPlayingMoviesApi';
 
 //Series//
-import MostPopularSeries from './Components/NewSeries/MostPopularSeries';
-import MostPopularSeriesApi from './Components/NewSeries/MostPopularSeriesApi';
+import MostPopularSeries from './Components/MostPopularSeries/MostPopularSeries';
+import MostPopularSeriesApi from './Components/MostPopularSeries/MostPopularSeriesApi';
+import MostRatedSeries from './Components/MostRatedSeries/MostRatedSeries';
+import MostRatedSeriesApi from './Components/MostRatedSeries/MostRatedSeriesApi';
+import OnAirSeries from './Components/SeriesOnAir/SeriesOnAir';
+import OnAirSeriesApi from './Components/SeriesOnAir/SeriesOnAirApi';
+import OnAirTodaySeries from './Components/SeriesOnAirTodya.js/SeriesOnAirToday';
+import OnAirTodaySeriesApi from './Components/SeriesOnAirTodya.js/SeriesOnAireTdoayApi';
 
-
+//Footer//
 import Footer from './Components/Footer/Footer';
-import React from 'react';
+
 
 function App() {
   return (
@@ -38,6 +45,12 @@ function App() {
       <NowPlayingMoviesApi/>
       <MostPopularSeries/>
       <MostPopularSeriesApi/>
+      <MostRatedSeries/>
+      <MostRatedSeriesApi/>
+      <OnAirSeries/>
+      <OnAirSeriesApi/>
+      <OnAirTodaySeries/>
+      <OnAirTodaySeriesApi/>
       <Footer/>
     </React.Fragment>
   );

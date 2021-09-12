@@ -18,7 +18,7 @@ class MostApi extends Component{
             .then((data)=>{
                 console.log(data);
                 this.setState({
-                    peliculasPopulares: data.results.splice(11-20),
+                    peliculasPopulares: data.results.splice(0,8)
                 })
             })
             .catch(function(e){

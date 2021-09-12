@@ -17,7 +17,7 @@ class MostPopularSeriesApi extends Component{
             .then((data)=>{
                 console.log(data);
                 this.setState({
-                    seriesPopulares: data.results.splice(11-20),
+                    seriesPopulares: data.results.splice(0,8),
                 })
             })
             .catch(function(e){
@@ -42,7 +42,7 @@ class MostPopularSeriesApi extends Component{
             })
             .then((data) =>{
                 this.setState({
-                    seriesPopulares : this.state.seriesPopulares.concat(data.results.splice(11-20)),
+                    seriesPopulares : this.state.seriesPopulares.concat(data.results.splice(0,9)),
                     nextUrl : 'https://api.themoviedb.org/3/tv/popular?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=2' 
                 })
             })

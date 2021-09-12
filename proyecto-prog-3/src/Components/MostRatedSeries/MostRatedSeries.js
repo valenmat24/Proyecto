@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-class OnAirSeries extends Component{
+class MostRatedSeries extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -36,7 +36,7 @@ class OnAirSeries extends Component{
         }
     }
     render(){
-        if(this.props.dataOnAirSeries == undefined) return (null)
+        if(this.props.dataRatedSeries == undefined) return (null)
         return(
             <React.Fragment>
             
@@ -52,11 +52,11 @@ class OnAirSeries extends Component{
                             </section>
                             <article>
                                 <main>
-                                    <img alt='20' src={`https://image.tmdb.org/t/p/w500/${this.props.dataOnAirSeries.backdrop_path}`} />
-                                    <h3>{this.props.dataOnAirSeries.name}</h3>
-                                    <p className={`extra ${this.state.verMas ? 'show' : 'hide   '}`}>{this.props.dataOnAirSeries.first_air_date} / Rated: {this.props.dataOnAirSeries.vote_average} / Overview: {this.props.dataOnAirSeries.overview}</p>
+                                    <img alt='20' src={`https://image.tmdb.org/t/p/w500/${this.props.dataRatedSeries.backdrop_path}`} />
+                                    <h3>{this.props.dataRatedSeries.name}</h3>
+                                    <p className={`extra ${this.state.verMas ? 'show' : 'hide   '}`}>{this.props.dataRatedSeries.first_air_date} / Rated: {this.props.dataRatedSeries.vote_average} / Overview: {this.props.dataRatedSeries.overview}</p>
                                     <p className='more' onClick={()=>this.verMas()}>{this.state.text}</p>
-                                    <button onClick = { () => this.props.ocultar(this.props.dataOnAirSeries.id)}>Quitar</button>
+                                    <button onClick = { () => this.props.ocultar(this.props.dataRatedSeries.id)}>Quitar</button>
                                 </main>
                             </article>
             
@@ -70,4 +70,4 @@ class OnAirSeries extends Component{
     
 }
 
-export default OnAirSeries;
+export default MostRatedSeries;
