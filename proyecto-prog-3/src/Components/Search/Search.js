@@ -23,14 +23,14 @@ nuevoValorIngresadoPorElUsuario(evento){
     render(){
         return(
             <React.Fragment>
-                        <form  onSubmit={(e)=>this.avoidSending(e)} className='searcher'>
-                            <input placeholder="Search Movies/Series" className='buscador' type='text' name='nombre' id='nombre' onChange={(e)=>this.nuevoValorIngresadoPorElUsuario(e)} value={this.state.filtrarPor}/>
-                            <button type="submit"><i class="fas fa-search"></i></button>
-                        </form>
+                        <div>
+                            <filterField filtrarPeliculas = {(texto) => this.filtrarPeliculas(texto)}/>
+                        </div>
+                        <div className= 'row card-container'></div>
             </React.Fragment>
         )
     }
     
 }
 
-export default Search
+export default Search;
