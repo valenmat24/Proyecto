@@ -81,3 +81,14 @@ h1{
     font-size: 60px;
     font-style: italic;
 }
+.titulos{
+    font-size: 50px;
+}
+
+div.character-card{
+    background-color:black;
+}
+
+button{
+    margin: 10%;
+}
