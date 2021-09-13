@@ -39,6 +39,8 @@ function App() {
       <MostRankedApi/>
       {/*<LastMovie/>*/}
       {/*<LastMovieApi/>*/}
+      <LastMovie/>
+      <LastMovieApi/>
       <ComingMoviesApi/>
       <MoviesComingSoon/>
       <NowPlayingMovies/>

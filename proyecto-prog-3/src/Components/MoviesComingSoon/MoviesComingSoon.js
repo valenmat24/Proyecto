@@ -55,8 +55,8 @@ class MoviesComingSoon extends Component{
                                 <img alt='20' src={`https://image.tmdb.org/t/p/w500/${this.props.dataComingMovies.backdrop_path}`} />
                                     <h3>{this.props.dataComingMovies.title}</h3>
                                     <p className={`extra ${this.state.verMas ? 'show' : 'hide'}`}>{this.props.dataComingMovies.release_date} / Rated: {this.props.dataComingMovies.vote_average} / Overview: {this.props.dataComingMovies.overview} </p>
-                                    <p className='more' onClick={()=>this.verMas()}>{this.state.text}</p>
-                                    <button onClick = { () => this.props.ocultar(this.props.dataComingMovies.id)}>Quitar</button>
+                                    <button type="button" className="btn btn-outline-primary" onClick={()=>this.verMas()}>{this.state.text}</button>
+                                    <button type="button" className="btn btn-danger" onClick = { () => this.props.ocultar(this.props.dataComingMovies.id)}>Quitar</button>
                                 </main>
                             </article>
             

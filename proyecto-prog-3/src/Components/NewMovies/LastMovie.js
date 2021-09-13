@@ -56,8 +56,8 @@ selected(){
                                 <main>
                                     <h3>{this.props.ultimaMovie.title}</h3>
                                     <p className={`extra ${this.state.verMas ? 'show' : 'hide'}`}>{this.props.ultimaMovie.release_date} /  {this.props.ultimaMovie.vote_average} stars. {this.props.ultimaMovie.overview} </p>
-                                    <p className='more' onClick={()=>this.verMas()}>{this.state.text}</p>
-                                    <button onClick = { () => this.props.ocultar(this.props.ultimaMovie.id)}>Quitar</button>
+                                    <button type="button" className="btn btn-outline-primary" onClick={()=>this.verMas()}>{this.state.text}</button>
+                                    <button type="button" className="btn btn-danger" onClick = { () => this.props.ocultar(this.props.ultimaMovie.id)}>Quitar</button>
                                 </main>
                             </article>
             
