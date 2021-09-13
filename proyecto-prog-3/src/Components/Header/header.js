@@ -7,9 +7,10 @@ render(){
     return(
         <React.Fragment>
             <header>
+            <div className='partearriba'>
                 <h1>MovieW</h1> 
-                    <i class="fas fa-chevron-left"></i>
-                    <i class="fas fa-chevron-right"></i>   
+                    
+            </div>
             </header>
             
         </React.Fragment>

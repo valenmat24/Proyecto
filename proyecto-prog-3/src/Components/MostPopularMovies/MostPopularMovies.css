@@ -92,3 +92,37 @@ div.character-card{
 button{
     margin: 10%;
 }
+.partearriba{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.parte{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+.fas.fa-th{
+    padding-left: 150vh;
+}
+.fas.fa-align-justify{
+    padding-left: 10px;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.row .character-card{
+    width: 20%;
+    margin: 5px;
+
+}
+
+.column .character-card{
+    width: 90%;
+}

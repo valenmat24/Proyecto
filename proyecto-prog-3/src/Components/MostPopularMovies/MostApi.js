@@ -10,7 +10,8 @@ class MostApi extends Component{
             peliculasPopulares:[],
             paginas: 1,
             peliculas: [],
-            cargando: true
+            cargando: true,
+            display: 'row'
         }
 }
     componentDidMount(){
@@ -67,17 +68,30 @@ class MostApi extends Component{
         })
     }
 
+    cambiarDisplay(nuevaOrientacion){
+        this.setState({
+            display: nuevaOrientacion
+        })
+    }
+
     render(){
         return(
             <React.Fragment>
                     <div className='fondo'>
                     <h2 className='titulos'> Most Popular Movies </h2>
+                    
                     {this.state.cargando ? <p>Cargando</p> : null} 
                     <Search filtrarPeliculas = {(valorAFiltrar)=> this.filtrar(valorAFiltrar)}/>
+                    <div className='parte'>
+                                    <i class="fas fa-th" onClick={()=>this.cambiarDisplay('column')}></i>
+                                    <i class="fas fa-align-justify"onClick={()=>this.cambiarDisplay('row')}></i>
+                                </div>
                     <div className='peliss'>
+                    <div className={`${this.state.display}`}>
                     {this.state.peliculas.map((peliculas, id)=><MostPopularMovies key={peliculas.title + id} dataPopularMovies={peliculas} ocultar = {(idEliminar)=>this.ocultar(idEliminar)}/>)}
                     </div>
-                    <button className='masPeliculas' onClick= {() => this.masPeliculasPopulares() } >Mas peliculas</button>
+                    </div>
+                    <button className='masPeliculas' onClick= {() => this.masPeliculasPopulares()} >Mas peliculas</button>
                     </div>
             </React.Fragment>
             )
