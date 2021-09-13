@@ -79,3 +79,7 @@ button.masPeliculas{
 div.character-card{
     background-color:black;
 }
+
+button{
+    margin: 10%;
+}
