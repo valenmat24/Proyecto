@@ -72,6 +72,12 @@ button.masPeliculas{
     background-color: black;
     color: white;
 }
-.titulos{
-    font-size: 50px;
+h2{
+    padding-left: -50vh;
+    font-size: 40px;
+    
+}
+h1{
+    font-size: 60px;
+    font-style: italic;
 }
