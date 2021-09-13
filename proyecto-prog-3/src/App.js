@@ -36,9 +36,9 @@ function App() {
       <MostPopularMovies/>
       <MostApi/>
       <MostRankedMovies/>
-      <MostRankedApi/>
-      {/*<LastMovie/>*/}
-      {/*<LastMovieApi/>*/}
+     {/* <MostRankedApi/>
+      <LastMovie/>
+      <LastMovieApi/>
       <ComingMoviesApi/>
       <MoviesComingSoon/>
       <NowPlayingMovies/>
@@ -50,7 +50,7 @@ function App() {
       <OnAirSeries/>
       <OnAirSeriesApi/>
       <OnAirTodaySeries/>
-      <OnAirTodaySeriesApi/>
+      <OnAirTodaySeriesApi/>*/}
       <Footer/>
     </React.Fragment>
   );

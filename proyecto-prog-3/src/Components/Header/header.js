@@ -1,18 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './Header.css';
+import Search from '../Search/Search';
 
-function Header(){
+class Header extends Component{
+render(){
     return(
         <React.Fragment>
             <header>
-                <h1>MovieW</h1> 
-                <p className='orden'>Ordenar ASC/ DESC</p>  
-                <i class="bi bi-grip-horizontal"></i>
-                <i class="bi bi-grip-vertical"></i>            
+                <h1>MovieW</h1>    
             </header>
             
         </React.Fragment>
     )
 }
+}
 
-export default Header
+export default Header;

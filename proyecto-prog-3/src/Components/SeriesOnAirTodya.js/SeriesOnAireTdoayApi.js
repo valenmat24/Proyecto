@@ -7,17 +7,18 @@ class OnAirTodaySeriesApi extends Component{
         super();
         this.state = {
             seriesOnAirToday:[],
+            paginas: 1 
         }
 }
     componentDidMount(){
         console.log('me monte')
-        let url = 'https://api.themoviedb.org/3/tv/airing_today?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=1';
+        let url = 'https://api.themoviedb.org/3/tv/airing_today?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=1' +this.state.paginas;
         fetch(url)
             .then((response)=>response.json())
             .then((data)=>{
                 console.log(data);
                 this.setState({
-                    seriesOnAirToday: data.results.splice(0,8)
+                    seriesOnAirToday: data.results.splice(0,8), paginas: this.state.paginas+1
                 })
             })
             .catch(function(e){
@@ -35,15 +36,14 @@ class OnAirTodaySeriesApi extends Component{
     }
 
     masSeriesOnAirToday(){
-            let url = 'https://api.themoviedb.org/3/tv/airing_today?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=1'
+            let url = 'https://api.themoviedb.org/3/tv/airing_today?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=' + this.state.paginas;
             fetch(url)
             .then(respuesta =>{
                 return respuesta.json()
             })
             .then((data) =>{
                 this.setState({
-                    seriesOnAirToday : this.state.seriesOnAirToday.concat(data.results.splice(0,9)),
-                    nextUrl : 'https://api.themoviedb.org/3/tv/airing_today?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=2' 
+                    seriesOnAirToday : this.state.seriesOnAirToday.concat(data.results.splice(0,9)), paginas: this.state.paginas+1
                 })
             })
         

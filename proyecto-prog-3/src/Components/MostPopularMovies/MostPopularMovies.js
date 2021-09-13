@@ -8,6 +8,7 @@ class MostPopularMovies extends Component{
             verMas: false,
             text: 'Ver mas',
             selected: false,
+            filtrarPor: '',
         }
     }
     verMas(){
@@ -35,6 +36,13 @@ class MostPopularMovies extends Component{
             })
         }
     }
+
+    nuevoValorIngresadoPorElUsuario(evento){
+        this.setState({
+            filtrarPor: evento.target.value //Es asi je
+        },()=> this.props.filtrarPeliculas(this.state.filtrarPor))
+    }
+
     render(){
         if(this.props.dataPopularMovies == undefined) return (null)
         return(

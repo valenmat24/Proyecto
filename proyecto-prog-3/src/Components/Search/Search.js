@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Search.css'
+import FiltroSearch from './SearchHijo';
 
 class Search extends Component{
     constructor(props){
@@ -12,21 +13,17 @@ class Search extends Component{
 avoidSending(evento){
     evento.preventDefault()
 }
-
 nuevoValorIngresadoPorElUsuario(evento){
     this.setState({
         filtrarPor: evento.target.value //Es asi je
     },()=> this.props.filtrarPeliculas(this.state.filtrarPor))
 }
-
-
     render(){
         return(
             <React.Fragment>
-                        <div>
-                            <filterField filtrarPeliculas = {(texto) => this.filtrarPeliculas(texto)}/>
-                        </div>
-                        <div className= 'row card-container'></div>
+                            <form onSubmit={(e)=>this.avoidSending(e)}>
+                                <input placeholder='Search your Movie' type='text' name='nombre' id='nombre' onChange={(e)=>this.nuevoValorIngresadoPorElUsuario(e)} value={this.state.filtrarPor}/>
+                            </form>
             </React.Fragment>
         )
     }

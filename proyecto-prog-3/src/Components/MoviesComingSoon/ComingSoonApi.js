@@ -6,18 +6,19 @@ class ComingMoviesApi extends Component{
         super();
         this.state = {
             comingMovies:[],
+            paginas: 1
         }
     }
 
     componentDidMount(){
         console.log('me monte')
-        let url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=1';
+        let url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=1' + this.state.paginas;
         fetch(url)
             .then((response)=>response.json())
             .then((data)=>{
                 console.log(data);
                 this.setState({
-                    comingMovies: data.results.splice(0,8),
+                    comingMovies: data.results.splice(0,8),paginas: this.state.paginas+1
                 })
             })
             .catch(function(e){
@@ -35,15 +36,14 @@ class ComingMoviesApi extends Component{
     }
 
     masPeliculasComing(){
-        let url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=2'
+        let url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page='+ this.state.paginas
         fetch(url)
         .then(respuesta =>{
             return respuesta.json()
         })
         .then((data) =>{
             this.setState({
-                comingMovies : this.state.comingMovies.concat(data.results.splice(0,9)),
-                nextUrl : 'https://api.themoviedb.org/3/movie/upcoming?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=2' 
+                comingMovies : this.state.comingMovies.concat(data.results.splice(0,9)),paginas: this.state.paginas+1
             })
         })
     

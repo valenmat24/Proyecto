@@ -7,17 +7,18 @@ class MostRatedSeriesApi extends Component{
         super();
         this.state = {
             seriesRankeadas:[],
+            paginas: 1
         }
 }
     componentDidMount(){
         console.log('me monte')
-        let url = 'https://api.themoviedb.org/3/tv/top_rated?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=1';
+        let url = 'https://api.themoviedb.org/3/tv/top_rated?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=' + this.state.paginas;
         fetch(url)
             .then((response)=>response.json())
             .then((data)=>{
                 console.log(data);
                 this.setState({
-                    seriesRankeadas: data.results.splice(0,8)
+                    seriesRankeadas: data.results.splice(0,8),paginas: this.state.paginas+1
                 })
             })
             .catch(function(e){
@@ -35,15 +36,14 @@ class MostRatedSeriesApi extends Component{
     }
 
     masSeriesRankeadas(){
-            let url = 'https://api.themoviedb.org/3/tv/top_rated?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=1'
+            let url = 'https://api.themoviedb.org/3/tv/top_rated?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=1'+ this.state.paginas
             fetch(url)
             .then(respuesta =>{
                 return respuesta.json()
             })
             .then((data) =>{
                 this.setState({
-                    seriesRankeadas : this.state.seriesRankeadas.concat(data.results.splice(0,9)),
-                    nextUrl : 'https://api.themoviedb.org/3/tv/top_rated?api_key=2b661f2a58f652da9b57fcc62c66ce78&language=en-US&page=2' 
+                    seriesRankeadas : this.state.seriesRankeadas.concat(data.results.splice(0,9)),paginas: this.state.paginas+1
                 })
             })
         
