@@ -75,3 +75,7 @@ button.masPeliculas{
 .titulos{
     font-size: 50px;
 }
+
+div.character-card{
+    background-color:black;
+}
