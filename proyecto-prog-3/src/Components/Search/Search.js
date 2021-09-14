@@ -21,8 +21,8 @@ nuevoValorIngresadoPorElUsuario(evento){
     render(){
         return(
             <React.Fragment>
-                            <form onSubmit={(e)=>this.avoidSending(e)}>
-                                <input placeholder='Search your Movie' type='text' name='nombre' id='nombre' onChange={(e)=>this.nuevoValorIngresadoPorElUsuario(e)} value={this.state.filtrarPor}/>
+                            <form className="navbar navbar-dark bg-dark" onSubmit={(e)=>this.avoidSending(e)}>
+                                <input className="buscador" placeholder='Search your Movie' type='text' name='nombre' id='nombre' onChange={(e)=>this.nuevoValorIngresadoPorElUsuario(e)} value={this.state.filtrarPor}/>
                             </form>
             </React.Fragment>
         )
