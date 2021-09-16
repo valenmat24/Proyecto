@@ -40,7 +40,7 @@ class MostPopularMovies extends Component{
 
     
 
-    nuevoValorIngresadoPorElUsuario(evento){
+   nuevoValorIngresadoPorElUsuario(evento){
         this.setState({
             filtrarPor: evento.target.value //Es asi je
         },()=> this.props.filtrarPeliculas(this.state.filtrarPor))

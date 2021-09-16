@@ -4,11 +4,12 @@ ul{
     padding-bottom: 40px;
 }
 li{
-    font-size: 20px;
+    font-size: 50px;
     padding-top: 50px;
     padding-left: 300px;
     list-style: none;
     color: black;
     justify-content: space-between;
     font-style: italic;
+    
 }

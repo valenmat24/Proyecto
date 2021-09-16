@@ -38,7 +38,8 @@ class MostApi extends Component{
             return peliculas.id != id
         })  
         this.setState({
-            peliculasPopulares : peliculasQueQuedan
+            peliculasPopulares : peliculasQueQuedan,
+            peliculas : peliculasQueQuedan
         })
     }
 
@@ -78,10 +79,9 @@ class MostApi extends Component{
         return(
             <React.Fragment>
                     <div className='fondo'>
-                    <h2 className='titulos'> Most Popular Movies </h2>
                     
                     {this.state.cargando ? <p>Cargando</p> : null} 
-                    <Search filtrarPeliculas = {(valorAFiltrar)=> this.filtrar(valorAFiltrar)}/>
+                    <Search filtrarPeliculas = {(valorAFiltrar)=> this.filtrar(valorAFiltrar)}/> 
                     <div className='parte'>
                                     <i class="fas fa-th" onClick={()=>this.cambiarDisplay('column')}></i>
                                     <i class="fas fa-align-justify"onClick={()=>this.cambiarDisplay('row')}></i>
