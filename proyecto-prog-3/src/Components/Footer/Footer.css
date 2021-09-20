@@ -1,15 +1,14 @@
-ul{
+.team{
     display: flex;
     background-color: rgb(180, 17, 71);
-    padding-bottom: 40px;
+    
 }
 li{
     font-size: 50px;
-    padding-top: 50px;
-    padding-left: 300px;
+    margin-top: -90px;
+    padding-left: 150px;
     list-style: none;
     color: black;
     justify-content: space-between;
-    font-style: italic;
-    
+    font-style: italic;   
 }

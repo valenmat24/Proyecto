@@ -41,9 +41,10 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 
 }
 .masPeliculas{
-    padding: 20px;
     padding-left: 100px;
     padding-right: 100px;
+    margin-top: 50px;
+    margin-left: -500px;
 }
 h3{
     text-align: center;
@@ -93,17 +94,17 @@ button{
     margin: 10%;
 }
 .partearriba{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
     position: fixed;
-    background-color: rgba(58,59,69,.15);
+    background-color: rgb(180, 17, 71, 0.5);
     width: 100%;
+    padding-bottom: 20px;
+    padding-left: 41%;
 }
 .parte{
     display: flex;
-    justify-content: space-between;
-    padding-top: 50px;
+    margin-bottom: 30px;
+    margin-left: -29.5%;
+    margin-top: 40px;
 }
 .fas.fa-th{
     padding-left: 150vh;
@@ -129,4 +130,20 @@ button{
 .column .character-card{
     width: 90%;
 }
-
+.busqueda{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+form{
+    margin-left: 38%;
+}
+.buscador{
+    padding-left: 150px;
+    padding-right: 100px;
+    background-color: black;
+    border-radius: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+}

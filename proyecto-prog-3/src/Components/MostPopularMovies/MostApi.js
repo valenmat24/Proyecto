@@ -81,11 +81,13 @@ class MostApi extends Component{
                     <div className='fondo'>
                     
                     {this.state.cargando ? <p>Cargando</p> : null} 
-                    <Search filtrarPeliculas = {(valorAFiltrar)=> this.filtrar(valorAFiltrar)}/> 
-                    <div className='parte'>
+                        
+                            <Search filtrarPeliculas = {(valorAFiltrar)=> this.filtrar(valorAFiltrar)}/> 
+                                <div className='parte'>
                                     <i class="fas fa-th" onClick={()=>this.cambiarDisplay('column')}></i>
                                     <i class="fas fa-align-justify"onClick={()=>this.cambiarDisplay('row')}></i>
                                 </div>
+                        
                     <div className='peliss'>
                     <div className={`${this.state.display}`}>
                     {this.state.peliculas.map((peliculas, id)=><MostPopularMovies key={peliculas.title + id} dataPopularMovies={peliculas} ocultar = {(idEliminar)=>this.ocultar(idEliminar)}/>)}
